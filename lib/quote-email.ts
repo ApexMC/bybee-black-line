@@ -26,12 +26,12 @@ export async function sendQuoteEmail(quote: QuoteRequest) {
   });
 
   const result = await transport.sendMail({
-    from: { name: "Bybee Black Line", address: from },
+    from: { name: "Bybee Blackline", address: from },
     to,
     replyTo: { name: quote.name, address: quote.email },
     subject: `Detailing quote request: ${quote.vehicle}`,
     text: [
-      "New quote request from the Bybee Black Line website",
+      "New quote request from the Bybee Blackline website",
       "",
       `Name: ${quote.name}`,
       `Email: ${quote.email}`,

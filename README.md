@@ -1,4 +1,4 @@
-# Bybee Black Line Auto Detailing
+# Bybee Blackline Auto Detailing
 
 A Next.js App Router site with a black and silver visual identity, shadcn/ui components built on Radix primitives, and an interactive Three.js finish studio.
 
@@ -24,7 +24,7 @@ Copy `.env.example` to `.env.local` and fill in the values. In production, set t
 | `QUOTE_FROM_EMAIL` | A sender email address on your verified Resend domain, e.g. `quotes@yourdomain.com` |
 | `QUOTE_TO_EMAIL` | The inbox that receives quote requests |
 
-Use plain email addresses for the sender and recipient. The sender display name is “Bybee Black Line.” Replies go to the customer’s submitted email address. Ports `465` and `2465` use implicit TLS; other SMTP ports require STARTTLS. See [Resend’s SMTP setup](https://resend.com/docs/send-with-smtp) for API key and domain verification details.
+Use plain email addresses for the sender and recipient. The sender display name is “Bybee Blackline.” Replies go to the customer’s submitted email address. Ports `465` and `2465` use implicit TLS; other SMTP ports require STARTTLS. See [Resend’s SMTP setup](https://resend.com/docs/send-with-smtp) for API key and domain verification details.
 
 The form posts to `/api/quote/` and sends one notification to the configured business inbox. The customer sees a success message only after the SMTP server accepts the email. Failed requests retain the entered details for retrying. No confirmation email or appointment is created automatically.
 
@@ -45,7 +45,7 @@ Service descriptions are initial editorial content; confirm actual services and 
 
 ## Asset credits
 
-“Ferrari 458 Italia” model by vicent091036: https://sketchfab.com/models/57bf6cc56931426e87494f554df1dab6, CC BY 4.0, sourced from Three.js examples. Materials, lighting, and presentation modified. Model and AO texture source: https://github.com/mrdoob/three.js/tree/dev/examples/models/gltf. Vehicle brands are not affiliated with Bybee Black Line.
+“Ferrari 458 Italia” model by vicent091036: https://sketchfab.com/models/57bf6cc56931426e87494f554df1dab6, CC BY 4.0, sourced from Three.js examples. Materials, lighting, and presentation modified. Model and AO texture source: https://github.com/mrdoob/three.js/tree/dev/examples/models/gltf. Vehicle brands are not affiliated with Bybee Blackline.
 
 Automotive photographs from Unsplash (photo IDs 1503376780353-7e6692767b70, 1605437241278-c1806d14a4d9, and 1492144534655-ae79c964c9d7). Fonts: Barlow Condensed and Manrope, Google Fonts, licensed under the SIL Open Font License. Three.js Draco decoder files retain their distributed license notices.
 

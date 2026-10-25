@@ -60,7 +60,7 @@ test("submissions send only to the business inbox with the customer as Reply-To"
   assert.deepEqual(await response.json(), { success: true });
   assert.equal(response.headers.get("cache-control"), "no-store");
   assert.equal(sent.length, 1);
-  assert.deepEqual(sent[0].from, { name: "Bybee Black Line", address: "quotes@bybee.example" });
+  assert.deepEqual(sent[0].from, { name: "Bybee Blackline", address: "quotes@bybee.example" });
   assert.equal(sent[0].to, "team@bybee.example");
   assert.deepEqual(sent[0].replyTo, { name: "Alex Driver", address: body.email });
   assert.match(String(sent[0].text), /2022 Ford F-150/);

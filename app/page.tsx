@@ -23,7 +23,26 @@ const faqs = [
 ];
 
 function Brand({ footer = false }: { footer?: boolean }) {
-  return <a className={`brand ${footer ? "footer-brand" : ""}`} href="#home" aria-label="Bybee Black Line home"><span className="brand-symbol"><img src="/images/bybee-logo.png" alt="" /></span><span className="brand-words"><strong>BYBEE <span>BLACK LINE</span></strong><small>AUTO DETAILING</small></span></a>;
+  return (
+    <a 
+      className={`brand ${footer ? "footer-brand" : ""}`}
+      href="#home"
+      aria-label="Bybee Blackline home">
+      <span className="brand-symbol">
+        <img
+          src="/images/bybee-logo.png"
+          alt="" />
+      </span>
+      <span className="brand-words items-center">
+        <strong>
+          <span>
+            BYBEE BLACKLINE
+          </span>
+        </strong>
+        <small>— AUTO DETAILING —</small>
+      </span>
+    </a>
+  );
 }
 
 export default function Home() {
@@ -56,7 +75,7 @@ export default function Home() {
         <FinishStudio />
         <div className="hero-content">
           <h1>NOVELTY,<br /><span>RESTORED.</span></h1>
-          <p className="hero-description">Exquisite interior detailing,<br />exterior detailing, paint correction, and protection coming soon.</p>
+          <p className="hero-description">Exquisite interior detailing.<br /><small className="text-zinc-600">Exterior detailing, paint correction, and protection coming soon.</small></p>
           <div className="hero-buttons"><Button size="lg" onClick={() => openQuote()}>Get a quote <ArrowUpRight /></Button><a href="#services" className="text-link">View services <ArrowRight size={15} /></a></div>
         </div>
       </section>
@@ -74,12 +93,12 @@ export default function Home() {
       <section id="contact" className="contact-section"><div className="contact-main"><h2>GET A QUOTE</h2><div className="contact-right"><p>Send your vehicle details for pricing and availability.</p><Button size="lg" onClick={() => openQuote()}>Request a quote <ArrowUpRight /></Button></div></div><div className="contact-bottom"><span>CALL US</span><a href="tel:+18126082336"><Phone size={15} />(812) 608-2336 <ArrowUpRight size={14} /></a><a href="tel:+18126082047"><Phone size={15} />(812) 608-2047 <ArrowUpRight size={14} /></a></div></section>
     </main>
 
-    <footer className="site-footer"><div className="footer-main"><Brand footer /><a href="#home">BACK TO TOP <ArrowUpRight size={14} /></a></div><div className="footer-bottom"><span>© {new Date().getFullYear()} Bybee Black Line Auto Detailing.</span><span>Louisville, KY / Southern Indiana</span><button onClick={() => setCreditsOpen(true)}>Site credits</button></div></footer>
+    <footer className="site-footer"><div className="footer-main"><Brand footer /><a href="#home">BACK TO TOP <ArrowUpRight size={14} /></a></div><div className="footer-bottom"><span>© {new Date().getFullYear()} Bybee Blackline Auto Detailing.</span><span>Louisville, KY / Southern Indiana</span><button onClick={() => setCreditsOpen(true)}>Site credits</button></div></footer>
 
     <Dialog open={quoteOpen} onOpenChange={setQuoteOpen}><DialogContent><QuoteForm initialServices={selected} onClose={() => setQuoteOpen(false)} /></DialogContent></Dialog>
 
     <Dialog open={serviceDetail !== null} onOpenChange={(open) => { if (!open) setServiceDetail(null); }}><DialogContent>{serviceDetail !== null && <><DialogTitle>{services[serviceDetail].name}</DialogTitle><DialogDescription>Service options</DialogDescription><ul className="service-includes">{services[serviceDetail].includes.map((item) => <li key={item}><Check size={16} />{item}</li>)}</ul><p className="service-modal-note">We’ll confirm the scope, price, and availability after discussing your vehicle.</p><Button className="w-full" onClick={() => { const service = services[serviceDetail].name; setServiceDetail(null); openQuote(service); }}>Request a quote <ArrowUpRight /></Button></>}</DialogContent></Dialog>
 
-    <Dialog open={creditsOpen} onOpenChange={setCreditsOpen}><DialogContent><DialogTitle>Site credits</DialogTitle><DialogDescription>Branding supplied by Bybee Black Line. Photos from Unsplash and the 3D model are illustrative, not examples of customer work.</DialogDescription><p className="credits-text">“Ferrari 458 Italia” 3D model by <a href="https://sketchfab.com/models/57bf6cc56931426e87494f554df1dab6" target="_blank" rel="noreferrer">vicent091036</a>, used under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noreferrer">CC BY 4.0</a>, via Three.js. Materials, lighting, and presentation modified. No affiliation with the vehicle manufacturer.</p></DialogContent></Dialog>
+    <Dialog open={creditsOpen} onOpenChange={setCreditsOpen}><DialogContent><DialogTitle>Site credits</DialogTitle><DialogDescription>Branding supplied by Bybee Blackline. Photos from Unsplash and the 3D model are illustrative, not examples of customer work.</DialogDescription><p className="credits-text">“Ferrari 458 Italia” 3D model by <a href="https://sketchfab.com/models/57bf6cc56931426e87494f554df1dab6" target="_blank" rel="noreferrer">vicent091036</a>, used under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noreferrer">CC BY 4.0</a>, via Three.js. Materials, lighting, and presentation modified. No affiliation with the vehicle manufacturer.</p></DialogContent></Dialog>
   </>;
 }
